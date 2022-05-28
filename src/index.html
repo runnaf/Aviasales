@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <title>Авиасейлс</title>
+</head>
+<body>
+  <main>
+    <div class="promo">
+      <h1 class="promo__title visually-hidden">Авиасейлс. Поиск удобных авиабилетов</h1>
+      <img src="./img/logo.svg" class="promo__img" alt="Авиасейлс. Поиск удобных авиабилетов" width="85" height="88">
+    </div>
+
+    <section class="tickets">
+      <div class="tickets__filter-transfers">
+        <form action="#" class="tickets__form-transfers ">
+          <fieldset class="tickets__transfers transfers">
+            <legend class="transfers__desc">Количество пересадок</legend>
+            <input type="checkbox" name="transfers" value="all" id="transfers-all" class="transfers__checkbox visually-hidden">
+            <label class="transfers__label" for="transfers-all">
+              <span class="transfers__mark">
+                <img class="transfers__checkbox-icon" src="img/shape.svg" width="12" height="8">
+              </span>
+              <span class="transfer__desc">Все</span>
+            </label>
+            <input type="checkbox" name="transfers" value="0" id="transfers-none" class="transfers__checkbox visually-hidden">
+            <label class="transfers__label" for="transfers-none">
+              <span class="transfers__mark">
+                <img class="transfers__checkbox-icon" src="img/shape.svg" width="12" height="8">
+              </span>
+              <span class="tickets__transfer-desc">Без пересадок</span>
+            </label>
+            <input type="checkbox" name="transfers" value="1" id="transfers-one" class="transfers__checkbox visually-hidden">
+            <label class="transfers__label" for="transfers-one">
+              <span class="transfers__mark">
+                <img class="transfers__checkbox-icon" src="img/shape.svg" width="12" height="8">
+              </span>
+              <span class="tickets__transfer-desc">1 пересадка</span>
+            </label>
+            <input type="checkbox" name="transfers" value="2" id="transfers-two" class="transfers__checkbox visually-hidden">
+            <label class="transfers__label" for="transfers-two">
+              <span class="transfers__mark">
+                <img class="transfers__checkbox-icon" src="img/shape.svg" width="12" height="8">
+              </span>
+              <span class="tickets__transfer-desc">2 пересадки</span>
+            </label>
+            <input type="checkbox" name="transfers" value="3" id="transfers-three" class="transfers__checkbox visually-hidden">
+            <label class="transfers__label" for="transfers-three">
+              <span class="transfers__mark">
+                <img class="transfers__checkbox-icon" src="img/shape.svg" width="12" height="8">
+              </span>
+              <span class="tickets__transfer-desc">3 пересадки</span>
+            </label>
+          </fieldset>
+        </form>
+      </div>
+      <div class="tickets__filters">
+        <form action="#" class="tickets__filters-preference">
+          <fieldset class="tickets__preferences preferences">
+            <input type="radio" name="preference" value="cheapest" id="cheapest" class="preferences__radio visually-hidden">
+            <label class="preferences__label preferences__label--cheapest" for="cheapest">Самый дешевый</label>
+            <input type="radio" name="preference" value="fastest" id="fastest" class="preferences__radio visually-hidden">
+            <label class="preferences__label preferences__label--fastest" for="fastest">Самый быстрый</label>
+            <input type="radio" name="preference" value="optimal" id="optimal" class="preferences__radio visually-hidden">
+            <label class="preferences__label preferences__label--optemal" for="optimal">Оптимальный</label>
+          </fieldset>
+        </form>
+      </div>
+      <ul class="tickets__list">
+
+  <!-- Блок для вставки билетов -->
+
+      </ul>
+      <button class="tickets__button" type="button">Показать еще 5 билетов!</button>
+    </section>
+  </main>
+
+  <!-- Карточка билетов -->
+  <template id="#ticket">
+    <li class="tickets__item-container">
+      <a class="tickets__item" href="#">
+        <p class="tickets__price">13 400 Р</p>
+        <img class="tickets__airline" src="" alt="авиакомпания" width="110" height="36">
+        <div class="tickets__data-from">
+          <dl class="tickets__data-list">
+            <div>
+              <dt class="tickets__item-term tickets__airport-from">MOW – HKT</dt>
+              <dd class="tickets__item-desc tickets__departure-time-from">10:45 – 08:00</dd>
+            </div>
+            <div>
+              <dt class="tickets__item-term">В пути</dt>
+              <dd class="tickets__item-desc tickets__time">21ч 15м</dd>
+            </div>
+            <div>
+              <dt class="tickets__item-term tickets__transfer-from">2 пересадки</dt>
+              <dd class="tickets__item-desc airport-of-transfer-from">HKG, JNB</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="tickets__data-to">
+          <dl class="tickets__data-list">
+            <div>
+              <dt class="tickets__item-term tickets__airport-to">MOW – HKT</dt>
+              <dd class="tickets__item-desc tickets__departure-time-to">10:45 – 08:00</dd>
+            </div>
+            <div>
+              <dt class="tickets__item-term">В пути</dt>
+              <dd class="tickets__item-desc tickets__time">21ч 15м</dd>
+            </div>
+            <div>
+              <dt class="tickets__item-term tickets__transfers-to">2 пересадки</dt>
+              <dd class="tickets__item-desc tickets__airport-of-transfer-to">HKG, JNB</dd>
+            </div>
+          </dl>
+        </div>
+      </a>
+    </li>
+  </template>
+
+  <!-- Сообщение на время загрузки -->
+  <template id="tickets-no">
+    <div class="tickets-no message">
+      <p class="tickets-no__message">Мы подбираем билеты для Вас,<br> пожалуйста подождите</p>
+    </div>
+  </template>
+
+  <!-- Сообщение об ошибке создания объявления -->
+  <template id="error">
+    <div class="error message">
+      <p class="error__message">Ошибка поиска билетов</p>
+      <button type="button" class="error__button">Попробовать снова</button>
+    </div>
+  </template>
+</body>
+</html>
